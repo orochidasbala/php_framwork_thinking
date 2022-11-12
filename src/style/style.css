@@ -1,0 +1,6 @@
+.complete {
+    color: green;
+}
+.uncomplete {
+    color: crimson;
+}
