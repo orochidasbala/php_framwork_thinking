@@ -1,5 +1,4 @@
 <?php
-
     class Router {
         protected $routes=[];
         public function register($routes){
@@ -16,4 +15,4 @@
 
     $router = new Router;
     require "core/routes.php";
-    require $router->direct("about");
+    require $router->direct(trim($_SERVER['REQUEST_URI'], "/"));

@@ -1,3 +1,3 @@
 <?php
 
-	require "core/bootup.php";
+require "core/bootup.php";

@@ -1,6 +1,6 @@
-<?
+<?php
     // databases
 
-    dd("This is working now");
+    // dd("This is working now");
 
-    // require "view/contact.view.php";
+    require "views/contact.view.php";
