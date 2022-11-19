@@ -1,3 +1,3 @@
 <?php require "partials/heading.php"; ?>
-    <h2>Categories</h2>
+    <h1>Categories</h1>
 <?php require "partials/footer.php"; ?>

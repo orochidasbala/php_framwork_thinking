@@ -1,7 +1,10 @@
 <?php
 class Router
 {
-    protected $routes = [];
+    public $routes = [
+        "GET" => [],
+        "POST" => []
+    ];
     public function register($routes)
     {
         $this->routes = $routes;
@@ -12,12 +15,19 @@ class Router
         require $routeFile;
         return $router;
     }
-    public function direct($uri)
+
+    public function get($uri, $controller) {
+        return $this->routes["GET"][$uri] = $controller;
+    }
+    public function post($uri, $controller) {
+        return $this->routes["POST"][$uri] = $controller;
+    }
+    public function direct($uri, $method)
     {
-        if (array_key_exists($uri, $this->routes)) {
-            return $this->routes[$uri];
+        if (array_key_exists($uri, $this->routes[$method])) {
+            return $this->routes[$method][$uri];
         } else {
-            echo "Error occuring in the routes system";
+            die("404 Page Not Found");
         }
     }
 }
