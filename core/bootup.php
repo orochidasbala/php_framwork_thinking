@@ -8,7 +8,7 @@ require "core/databases/QueryBuilder.php";
 
 
 $config = require "config.php";
-$query = new QueryBuilder(
+$database = new QueryBuilder(
     Connection::make($config['database'])
 );
 
