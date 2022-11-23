@@ -1,2 +1,2 @@
 <?php
-    require "views/categories.view.php";
+   view("categories");

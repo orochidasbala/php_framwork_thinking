@@ -5,4 +5,5 @@
     $router->get("contact", "controllers/Contact.php");
     $router->get("order", "controllers/Order.php");
     $router->get("categories", "controllers/Category.php");
+    $router->post("delete", "controllers/Delete.php");
     $router->post("names", "controllers/addName.php");

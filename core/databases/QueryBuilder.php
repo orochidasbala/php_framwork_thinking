@@ -15,18 +15,29 @@ class QueryBuilder
 		return $statment->fetchAll(PDO::FETCH_OBJ);
 	}
 
-	public function insert($dataArr, $table) {
+	public function insert($dataArr, $table)
+	{
 
 		$keys = array_keys($dataArr);
 		$cols = implode(",", $keys);
 		$ques = "";
-		foreach($keys as $key) {
+		foreach ($keys as $key) {
 			$ques .= "?,";
 		}
 		$ques = rtrim($ques, ",");
 		$values = array_values($dataArr);
 		$query = "insert into $table ($cols) values ($ques)";
-		$statment = $this->pdo->prepare($query);
-		$statment->execute($values);
+		$this->pdo->prepare($query)->execute($values);
+	}
+
+	public function delete($id, $table)
+	{
+		if ($id) {
+			$query = "delete from $table where id=$id";
+			$statment = $this->pdo->prepare($query);
+			$statment->execute();
+		} else {
+			dd("id not found");
+		}
 	}
 }
