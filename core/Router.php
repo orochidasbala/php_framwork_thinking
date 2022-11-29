@@ -24,10 +24,16 @@ class Router
     }
     public function direct($uri, $method)
     {
-        if (array_key_exists($uri, $this->routes[$method])) {
-            return $this->routes[$method][$uri];
-        } else {
-            die("404 Page Not Found");
-        }
+        if (!array_key_exists($uri, $this->routes[$method])) {
+            die("404 Page Not Found");    
+        } 
+        $exp = explode("@", $this->routes[$method][$uri]);
+        // dd($exp);
+        $this->callMethod($exp[0],$exp[1]);
+    }
+
+    public function callMethod($class, $method) {
+        $class = new $class;
+        $class->$method();
     }
 }

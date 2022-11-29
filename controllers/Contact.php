@@ -1,4 +1,0 @@
-<?php
-    // databases
-
-    view("contact");

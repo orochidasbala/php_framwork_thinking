@@ -13,6 +13,7 @@ class ComposerStaticInita17f0b994e48c0b1d79bde3b50b7ecd9
         'Composer\\Autoload\\ComposerStaticInita17f0b994e48c0b1d79bde3b50b7ecd9' => __DIR__ . '/..' . '/composer/autoload_static.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Connection' => __DIR__ . '/../..' . '/core/databases/Connection.php',
+        'Pages' => __DIR__ . '/../..' . '/controllers/Pages.php',
         'QueryBuilder' => __DIR__ . '/../..' . '/core/databases/QueryBuilder.php',
         'Request' => __DIR__ . '/../..' . '/core/Request.php',
         'Router' => __DIR__ . '/../..' . '/core/Router.php',

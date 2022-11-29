@@ -1,9 +1,7 @@
 <?php
 
-    $router->get("", "controllers/Home.php");
-    $router->get("about", "controllers/About.php");
-    $router->get("contact", "controllers/Contact.php");
-    $router->get("order", "controllers/Order.php");
-    $router->get("categories", "controllers/Category.php");
-    $router->post("delete", "controllers/Delete.php");
-    $router->post("names", "controllers/addName.php");
+    $router->get("", "Pages@index");
+    $router->get("about", "Pages@about");
+    $router->get("contact", "Pages@contact");
+    $router->post("delete", "Pages@delete");
+    $router->post("names", "Pages@addname");
