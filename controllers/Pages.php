@@ -22,14 +22,17 @@ class Pages
 
         header("Location: /");
     }
-    public function addname(){
-        if ($_POST['name']) {
-            App::get('database')->insert([
-                "name" => $_POST['name']
-            ], "users");
-            header("Location: /");
-        } else {
-            header("Location: /");
+    public function addname()
+    {
+        $req = request('name');
+        
+        if (!$req) {
+            redirect("/");
+            die();
         }
+        App::get('database')->insert([
+            "name" => $req
+        ], "users");
+        redirect("/");
     }
 }
