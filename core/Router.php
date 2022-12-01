@@ -27,9 +27,9 @@ class Router
         if (!array_key_exists($uri, $this->routes[$method])) {
             die("404 Page Not Found");    
         } 
-        $exp = explode("@", $this->routes[$method][$uri]);
-        // dd($exp);
-        $this->callMethod($exp[0],$exp[1]);
+        $route = $this->routes[$method][$uri];
+        // dd($route);
+        $this->callMethod($route[0],$route[1]);
     }
 
     public function callMethod($class, $method) {

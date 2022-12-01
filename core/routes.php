@@ -1,7 +1,9 @@
 <?php
 
-    $router->get("", "Pages@index");
-    $router->get("about", "Pages@about");
-    $router->get("contact", "Pages@contact");
-    $router->post("delete", "Pages@delete");
-    $router->post("names", "Pages@addname");
+use controller\Pages;
+
+$router->get("", [Pages::class, "index"]);
+$router->get("about", [Pages::class, "about"]);
+$router->get("contact", [Pages::class, "contact"]);
+$router->post("delete", [Pages::class, "delete"]);
+$router->post("names", [Pages::class, "addname"]);

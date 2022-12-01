@@ -1,5 +1,10 @@
 <?php
 
+
+namespace controller;
+
+use core\App;
+
 class Pages
 {
     public function index()
@@ -25,7 +30,7 @@ class Pages
     public function addname()
     {
         $req = request('name');
-        
+
         if (!$req) {
             redirect("/");
             die();
